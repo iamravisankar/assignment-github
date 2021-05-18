@@ -11,7 +11,7 @@ You can pass the username on url `http://localhost:4200/iamravisankar` .
 
 ## Demo 
 
-You can tey the demo at  `https://backend.onstep.in/githubprofile/` .
+You can try the demo at  `https://backend.onstep.in/githubprofile/` .
 
  
 ## Build
