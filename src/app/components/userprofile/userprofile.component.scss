@@ -1,0 +1,97 @@
+.profile-container {
+    position: absolute;
+     height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+   
+  }
+  
+.profile-card{
+    margin-left: auto; 
+    margin-right: auto; 
+    margin-top: 10px;
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    position: relative;
+    width:70%;
+ background-color: #f7f8fc;
+border: 1px solid rgba(0, 0, 0, 0.158);
+ }
+
+.profile-head{
+ 
+     margin: 10px 0px 10px 60px;
+}
+.profile-image{
+    width: 100%;
+    padding: 15px 0;
+    border-radius: 50%;
+}
+.profile-details{
+     margin-top: 25px ;
+ 
+}
+
+.github-link{
+    padding-top: 40px;
+    font-size:13px;
+
+}
+
+.repos-conatiner{
+    width:90%;
+   margin-top:30px;
+   margin-left: auto; 
+   margin-right: auto; 
+}
+@media all and (min-width:0px) and (max-width: 780px) {
+
+
+    .profile-card{
+        margin-left: auto; 
+        margin-right: auto; 
+        margin-top: 10px;
+        margin-bottom: 30px;
+        padding-bottom: 30px;
+        position: relative;
+        width:99%;
+     background-color: #f7f8fc;
+    border: 1px solid rgba(0, 0, 0, 0.158);
+     }
+
+     .profile-details{
+         margin-left: auto;
+         margin-right: auto;
+        text-align: center;
+    
+   }
+
+   .profile-head{
+    margin:10px;
+}
+.github-link{
+    width: 100%;
+text-align:center ;
+ 
+}
+
+.image-holder{
+width: 50%;
+margin-left:auto;
+margin-right:auto;
+}
+
+     
+}
+
+.circle{
+     background-color: #eff1f6;
+     height: 100px;
+      width:100px;
+      margin-left:auto; 
+      margin-right:auto;
+      margin-top:50px;
+      border-radius: 100%;
+
+}
+

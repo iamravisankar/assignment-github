@@ -1,0 +1,43 @@
+<div class="profile-container">
+  <div class="profile-card card">
+    <app-header-loader *ngIf="loading"> </app-header-loader>
+    <div class="profile-head row" *ngIf="!loading">
+
+      <div class="col-md-3 col-sm-12">
+        <div class="image-holder">
+          <img class="profile-image" src="{{userdata.avatar_url}}">
+
+        </div>
+      </div>
+      <div class="col-md-9 col-sm-12">
+        <div class="profile-details">
+          <h4 class="name"> {{userdata.name}} </h4>
+          <span class="bio"> {{userdata.bio}} </span> <br>
+          <span class="location">  <fa-icon  
+            [icon]="faMapMarked"></fa-icon> &nbsp;{{userdata.location}}</span>
+          <div class="social">
+            <span>  <fa-icon  
+                [icon]="faTwitter" style="zoom:0.9"></fa-icon> &nbsp; https://twitter.com/{{userdata.twitter_username}} </span>
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="github-link">{{userdata.url}}</div>
+
+      </div>
+
+
+
+    </div>
+    <div class="repos-conatiner" *ngIf="loading">
+
+      <app-repos-loader> </app-repos-loader>
+
+    </div>
+
+    <div class="repos-conatiner" *ngIf="!loading">
+
+      <app-repos username="{{username}}"> </app-repos>
+    </div>
+  </div>
+</div>
