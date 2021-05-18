@@ -25,4 +25,4 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 ## Note
 
 
-I wokred last 8 hours to complete this Assignment.
+I was worked last 8 hours to complete this Assignment.
