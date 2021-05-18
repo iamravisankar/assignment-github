@@ -22,7 +22,8 @@
         </div>
       </div>
       <div class="col-12">
-        <div class="github-link">{{userdata.url}}</div>
+        <div class="github-link" (click)="goToLink(userdata.url)" ><fa-icon  
+            [icon]="faExternalLinkAlt"  ></fa-icon>  &nbsp; {{userdata.url}}</div>
 
       </div>
 

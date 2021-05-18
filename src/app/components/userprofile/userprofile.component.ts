@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {GlobalService } from '../../shared/global.service';
-import { faMapMarked} from '@fortawesome/free-solid-svg-icons';
+import { Router,  ActivatedRoute,  ParamMap } from '@angular/router';
+
+import { faMapMarked, faExternalLinkAlt} from '@fortawesome/free-solid-svg-icons';
 import { faTwitter} from '@fortawesome/free-brands-svg-icons';
 
 @Component({
@@ -10,13 +12,17 @@ import { faTwitter} from '@fortawesome/free-brands-svg-icons';
   styleUrls: ['./userprofile.component.scss']
 })
 export class UserprofileComponent implements OnInit {
-  username : string = "iamravisankar" ;
+  username : string | undefined | null;
   // username : string = "fabpot" ;
   userdata : any = {} ;
   loading : boolean = true;
   faMapMarked = faMapMarked;
   faTwitter = faTwitter;
-  constructor( public http: HttpClient, public global : GlobalService ) { }
+  faExternalLinkAlt = faExternalLinkAlt;
+  constructor( public http: HttpClient, public global : GlobalService ,private route: ActivatedRoute,) { 
+    this.username = this.route.snapshot.paramMap.get('username');
+
+  }
 
   ngOnInit(): void {
     this.getUserdata();
@@ -39,5 +45,7 @@ export class UserprofileComponent implements OnInit {
      
     });
    }
-
+   goToLink(url: string){
+    window.open(url, "_blank");
+}
 }

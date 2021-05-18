@@ -7,6 +7,11 @@ const routes: Routes = [
     path: '',
     component: UserprofileComponent, 
   },
+  {
+    path: ':username',
+    component: UserprofileComponent,
+    
+  },
 ];
 
 @NgModule({
