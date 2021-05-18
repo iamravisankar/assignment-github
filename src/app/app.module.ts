@@ -13,8 +13,8 @@ import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { ReposLoaderComponent } from './components/repos-loader/repos-loader.component';
 import { HeaderLoaderComponent } from './components/header-loader/header-loader.component';
 import { GlobalService } from './shared/global.service';
-import { NotifierModule } from 'angular-notifier';
-
+import { NotifierModule } from 'angular-notifier'; 
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -31,6 +31,7 @@ import { NotifierModule } from 'angular-notifier';
     NgbModule,
     HttpClientModule,
     FontAwesomeModule,
+    // RouterModule.forRoot([], { useHash: true }), 
     NgxSkeletonLoaderModule.forRoot(),
     NotifierModule
   ],
