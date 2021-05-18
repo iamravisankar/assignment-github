@@ -13,6 +13,7 @@ import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { ReposLoaderComponent } from './components/repos-loader/repos-loader.component';
 import { HeaderLoaderComponent } from './components/header-loader/header-loader.component';
 import { GlobalService } from './shared/global.service';
+import { NotifierModule } from 'angular-notifier';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { GlobalService } from './shared/global.service';
     HttpClientModule,
     FontAwesomeModule,
     NgxSkeletonLoaderModule.forRoot(),
+    NotifierModule
   ],
   providers: [HttpClient,GlobalService],
   bootstrap: [AppComponent]

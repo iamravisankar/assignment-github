@@ -3,8 +3,8 @@
     <div class="col-md-6 col-sm-12" *ngFor="let x of reposlistarray | slice: (page-1) * pageSize : page * pageSize"> 
         <app-repo-card [name]="x.full_name"  [description]="x.description" [languages]="x.languages" > </app-repo-card>
     </div> 
- <div class="col-sm-12 my-pagination " > 
-     <ngb-pagination  [collectionSize]="reposlistarray.length"   [(page)]="page"
+ <div class="col-sm-12 my-pagination " *ngIf="reposlistarray.length > 10" > 
+     <ngb-pagination   [collectionSize]="reposlistarray.length"   [(page)]="page"
     [pageSize]="pageSize" [maxSize]="10"  [boundaryLinks]="true" ></ngb-pagination>
  </div>
 </div>    

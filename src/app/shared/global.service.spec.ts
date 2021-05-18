@@ -43,7 +43,6 @@ describe('GlobalService', () => {
       let req = httpMock.expectOne('https://api.github.com/');
       expect(req.request.method).toBe("GET");
 
-      // req.flush(postItem);
       httpMock.verify();
 
     })));

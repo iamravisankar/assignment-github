@@ -26,6 +26,7 @@
     "@fortawesome/free-regular-svg-icons": "^5.15.2",
     "@fortawesome/free-solid-svg-icons": "^5.15.2",
     "@ng-bootstrap/ng-bootstrap": "^9.1.1",
+    "angular-notifier": "^9.0.1",
     "bootstrap": "^4.5.0",
     "ngx-skeleton-loader": "^2.9.1",
     "rxjs": "~6.6.0",
