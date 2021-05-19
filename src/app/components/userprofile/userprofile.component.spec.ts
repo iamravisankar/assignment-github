@@ -3,16 +3,28 @@ import { HttpClientTestingModule, HttpTestingController } from '@angular/common/
  
 import { UserprofileComponent } from './userprofile.component';
 import { HttpClientModule , HttpClient} from '@angular/common/http';
+import { NotifierService } from 'angular-notifier';
+import { NotifierModule } from 'angular-notifier'; 
+import {  ActivatedRoute } from '@angular/router';
 
 describe('UserprofileComponent', () => {
   let component: UserprofileComponent;
   let fixture: ComponentFixture<UserprofileComponent>;
   
-
+  
+  
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule], 
-      providers: [HttpClient], 
+      imports: [HttpClientTestingModule,NotifierModule], 
+      providers: [HttpClient,NotifierService, {provide: ActivatedRoute,useValue: {
+        snapshot: {
+            paramMap: {
+                get(): string {
+                    return '123';
+                },
+            },
+        },
+    }, }], 
       declarations: [ UserprofileComponent ]
     })
     .compileComponents();

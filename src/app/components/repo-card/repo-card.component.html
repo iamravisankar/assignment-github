@@ -1,17 +1,11 @@
 <div class="repo-card card"> 
 <h6 class="repo-name" >{{repoName}} </h6>
 <p class="repo-description" >{{repoDescription}}</p>     
-<div class="repo-languages row" >
-     <label class="btn-primary language" *ngFor="let x of repoLanguages" ngbButtonLabel>
-        {{x[0]}}
+<div class="repo-topics row" >
+     <label class="btn-primary topic" *ngFor="let x of repoTopics.names" ngbButtonLabel>
+        {{x}}
       </label>  
-         
-      
- 
-<!-- <span class="language" *ngFor="let x of repoLanguages">{{x[0]}}</span>
-<span class="language" *ngFor="let x of repoLanguages">{{x[0]}}</span>
-<span class="language" *ngFor="let x of repoLanguages">{{x[0]}}</span>
-<span class="language" *ngFor="let x of repoLanguages">{{x[0]}}</span> -->
+  
  
 
 </div> 

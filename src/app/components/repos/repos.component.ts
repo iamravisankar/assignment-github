@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {forkJoin} from "rxjs";
 import {tap} from "rxjs/operators";
 import {GlobalService } from '../../shared/global.service'
@@ -34,7 +34,7 @@ export class ReposComponent implements OnInit {
       console.log(this.reposlist);
       this.reposlistarray = Object.keys(this.reposlist).map((k) => this.reposlist[k]);
       console.log(this.reposlist);
-      this.getLanguages();
+      this.getTopics();
         //  this.reposlist = Object.entries(this.reposlist);
       console.log(this.reposlist);
      
@@ -48,19 +48,24 @@ export class ReposComponent implements OnInit {
    }
 
    
-  getLanguages(){
+  getTopics(){
     
-    console.log('getting languages...');
+    console.log('getting topics...');
     let urllist  = []; 
-    for( let i = 0; i < this.reposlistarray.length; i++){
-       urllist.push(this.global.http.get(this.reposlistarray[i].languages_url));
-    }
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Accept':  'application/vnd.github.mercy-preview+json',
+       })
+    };
+    for( let i = 0; i < this.reposlistarray.length; i++){ 
+        urllist.push(this.global.http.get(this.reposlistarray[i].url + '/topics',httpOptions));
+     }
     forkJoin(urllist).subscribe(results => { 
       console.log(results);
       for( let i = 0; i < results.length; i++){
         console.log("results...........");
         console.log(results[i]);
-       this.reposlistarray[i].languages = results[i]; 
+       this.reposlistarray[i].repotopics = results[i]; 
 
       }  
       this.loading = false;

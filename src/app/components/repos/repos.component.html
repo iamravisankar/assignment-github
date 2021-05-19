@@ -1,7 +1,7 @@
 <app-repos-loader *ngIf="loading"> </app-repos-loader>
 <div class="row "  *ngIf="!loading"> 
     <div class="col-md-6 col-sm-12" *ngFor="let x of reposlistarray | slice: (page-1) * pageSize : page * pageSize"> 
-        <app-repo-card [name]="x.full_name"  [description]="x.description" [languages]="x.languages" > </app-repo-card>
+        <app-repo-card [name]="x.full_name"  [description]="x.description" [topics]="x.repotopics" > </app-repo-card>
     </div> 
  <div class="col-sm-12 my-pagination " *ngIf="reposlistarray.length > 10" > 
      <ngb-pagination   [collectionSize]="reposlistarray.length"   [(page)]="page"

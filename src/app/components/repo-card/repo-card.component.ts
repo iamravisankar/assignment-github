@@ -8,15 +8,15 @@ import { Component, Input, OnInit } from '@angular/core';
 export class RepoCardComponent implements OnInit {
   @Input('name') repoName: string ="" ;
   @Input('description') repoDescription: any  ;
-  @Input('languages') repoLanguages: any ;
+  @Input('topics') repoTopics: any = {};
 
   constructor() { }
 
   ngOnInit(): void {
-    if(this.repoLanguages){ 
-   this.repoLanguages = Object.keys(this.repoLanguages).map((k) =>  [ k, this.repoLanguages[k]]); 
+     if(this.repoTopics){ 
+  //  this.repoTopics = Object.keys(this.repoTopics).map((k) =>  [ k, this.repoTopics[k]]); 
    }else{
-this.repoLanguages = [];
+this.repoTopics.names = [];
    }
   }
 }
